@@ -1,0 +1,498 @@
+Below is the full role-based feature map for LeaguePilot, grounded in the current application. Some workflows use live authenticated data; others can fall back to demo data. External delivery and payment actions remain separate from saved drafts and review records.
+
+## Signed-out and prospective users
+
+A visitor should be able to:
+
+- Understand that LeaguePilot is private youth-sports operations software.
+- View a limited, read-only public calendar.
+- Start a parent registration request for an active organization, season, and team.
+- Sign in with email and password.
+- Use Google or Facebook sign-in when those providers are configured.
+- Recover an expired or misplaced invitation.
+- See whether an invitation is pending, expired, accepted, revoked, or unavailable.
+- Access an offline fallback when the application cannot connect.
+- Install the application as a PWA on supported devices.
+
+Signing up proves identity; it does not automatically grant access to a child, team, coach role, or administrator role.
+
+## Parent and guardian
+
+### Home and game-day information
+
+A parent should be able to:
+
+- Immediately see the next game, practice, or team event.
+- See whether the event is confirmed, changed, cancelled, completed, or needs attention.
+- See which team and linked child the event concerns.
+- See the start time, end time, arrival time, location, and address.
+- Open directions through the available map link.
+- See field, parking, weather, and schedule information.
+- Open a concise Game-Day Sheet.
+- Review an arrival timeline, packing checklist, field plan, and player-readiness reminders.
+- Copy a local game plan for personal use.
+- See the latest coach update.
+- See whether a snack or volunteer role remains open.
+- See one clear next action instead of an administrative dashboard.
+
+### Schedule and calendar
+
+A parent should be able to:
+
+- Browse events through a seven-day ribbon.
+- View events grouped into Today, This Week, and Later.
+- Filter the family calendar by date.
+- See only events connected to approved family access.
+- Distinguish games, practices, team events, cancellations, and completed events.
+- See schedule-change states in plain language.
+- Treat public or unapproved calendar information as read-only.
+- Open the dedicated RSVP workflow from an event.
+
+### RSVP
+
+A parent should be able to:
+
+- Respond only for a child linked to their guardian account.
+- Choose Going, Maybe, or Not Going.
+- Add an optional attendance note.
+- See whether the response saved successfully.
+- Change a response while the event and season remain editable.
+- See an existing response directly on the calendar.
+- Avoid exposing individual family attendance responses publicly.
+
+### Messages and team communication
+
+A parent should be able to:
+
+- Participate in private, team-scoped chat.
+- Read pinned coach announcements.
+- Use game-day topic shortcuts.
+- See message read state where available.
+- Receive family-appropriate updates without seeing technical delivery language.
+- Update notification preferences for push, email, SMS fallback, urgent-only SMS, quiet hours, and digest frequency.
+- Unsubscribe through the approved preference workflow.
+
+LeaguePilot does not provide child accounts or unrestricted parent-to-parent direct messaging.
+
+### Parent Replay and practice recaps
+
+A parent should be able to:
+
+- Read coach-approved practice recaps.
+- See two or three practice focus areas.
+- Receive simple activities to try at home.
+- Read coach language translated into parent-friendly guidance.
+- See a parent tip, skill cards, and a team quest.
+- View approved coach video references when included.
+- See a memory moment or season timeline entry.
+- Follow skill-development cues without the app publicly ranking children.
+- See only recaps that have passed the coach approval and publication checkpoint.
+
+### Team, family, and access
+
+A parent should be able to:
+
+- See the team portal for approved teams.
+- See team colors, mascot, schedule, updates, and season information.
+- View linked children and family-access status.
+- Understand whether access is active, pending, denied, or needs administrator review.
+- Request help when a guardian-child connection is missing.
+- Switch roles when the same adult also has an approved coach or administrator role.
+- Manage account and family-facing settings.
+
+### Photos and community features
+
+A parent should be able to:
+
+- View only approved team media.
+- Report inappropriate or incorrectly shared media.
+- Browse sponsor-safe team galleries.
+- Browse moderated equipment-exchange listings.
+- See approved local sponsor placements without exposing family or child data.
+- Use field maps and team resources.
+- See aggregate family-availability signals without parent rankings or public shaming.
+
+### Snacks, volunteers, and money
+
+A parent should be able to:
+
+- Claim an available snack assignment.
+- Claim an available volunteer role.
+- See opportunities such as scorekeeper, field setup, fundraising, carpool, team parent, or backup volunteer.
+- See whether a role is already filled.
+- View a Family Wallet summary for linked players.
+- See registration fees, team dues, scholarship credits, sponsor discounts, unpaid balances, and their proof states.
+
+The current wallet does not itself collect or settle payments.
+
+## Coach
+
+### Sideline command board
+
+A coach should be able to:
+
+- See the next event immediately.
+- See what needs attention during the next 15 minutes.
+- See expected attendance and response rate.
+- See Going, Maybe, Not Going, and No Response totals.
+- Identify attendance gaps without publishing parent leaderboards.
+- See late RSVP changes.
+- See snack and volunteer gaps.
+- See weather or field risk.
+- See unfinished drafts and Parent Replay status.
+- Work only with teams covered by an active coach membership.
+
+### Coach calendar
+
+A coach should be able to:
+
+- Use a Now, Next, and Later schedule view.
+- Select an assigned-team event.
+- See readiness for attendance, weather, snacks, and volunteers.
+- Inspect current event details.
+- Prepare a proposed time, location, or status change.
+- Preview affected families, existing responses, no-response counts, and notification-record impact.
+- Save or queue the reviewed change through the existing workflow.
+- Clearly distinguish a saved change record from an externally delivered alert.
+
+### Attendance and RSVP management
+
+A coach should be able to:
+
+- View attendance summaries for assigned teams.
+- See which responses are missing.
+- Track response reliability as aggregate team information.
+- Prepare follow-up reminders.
+- Avoid accessing unrelated teams or private family information beyond the approved coaching scope.
+
+### Messages and announcements
+
+A coach should be able to:
+
+- Participate in assigned-team chat.
+- Create team announcements.
+- Draft a weekly update.
+- Preview family-facing language.
+- Save an announcement and pending team-broadcast record.
+- See whether content is Draft, Awaiting approval, Published, or Sent.
+- Review delivery readiness without falsely claiming that email, SMS, or push messages were delivered.
+
+### Parent Replay
+
+A coach should be able to:
+
+- Select two or three practice focus areas.
+- Add age group, team energy, coaching notes, and constraints.
+- Generate a structured local replay draft.
+- Review suggested home activities.
+- Review coach-to-parent translations.
+- Review a parent tip, skill cards, team quest, memory moment, and video recommendation.
+- Edit the family-facing result.
+- Preview exactly what families will see.
+- Approve and publish a reviewed replay.
+- Create pending parent-notification records after publication.
+- Reuse generated focus areas from Rookie Coach Assist.
+- Keep publication and external delivery as distinct actions.
+
+### Rookie Coach Assist
+
+A coach should be able to:
+
+- Generate age-appropriate practice guidance for young teams.
+- Use a short sideline reset or “Chaos Button.”
+- Receive clearer phrases to use with players.
+- See phrases to avoid.
+- Adapt drills based on team energy.
+- Generate a parent-reinforcement message draft.
+- Use the recommendations as editable guidance rather than autonomous instructions.
+
+### AI Coach Workspace
+
+An authorized coach should be able to prepare review-only drafts such as:
+
+- New Parent Brief.
+- Team Onboarding Brief.
+- Weekly Digest.
+- Practice Replay.
+- Announcement Cleaner.
+- Smart FAQ.
+- Coach Inbox Prioritization.
+- Parent Brief Before Game.
+- Season Timeline.
+- Coach Knowledge Base.
+- Action Item Extraction.
+- Safety Monitor.
+- End-of-Season Storybook.
+
+When the OpenAI provider is configured, the coach can request a source-backed rewrite. The result must still pass Preview → Edit → Approve → Publish and cannot send itself.
+
+### Roster and team tools
+
+A coach should be able to:
+
+- View the assigned-team roster.
+- See privacy-preserving player names and jersey information.
+- View team readiness and participation information.
+- Avoid accessing unrelated teams.
+- Update permitted team colors or mascot settings.
+- See family-access gaps that affect team operations without gaining administrator authority.
+
+### Weather, fields, snacks, and volunteers
+
+A coach should be able to:
+
+- Review weather and field conditions.
+- Create a weather-alert draft.
+- See the provider source and freshness when available.
+- Submit the draft for review.
+- Claim or manage available snack and volunteer responsibilities where permitted.
+- See open roles and game-day operational gaps.
+
+A weather draft is not a delivered family alert.
+
+### Drill-video references
+
+A coach should be able to:
+
+- Submit a YouTube drill URL.
+- Trigger metadata and embeddability validation.
+- See whether the source is awaiting administrator review.
+- Use approved videos in coach-only practice planning.
+- Assign approved references to a team or practice event.
+- View approved videos through privacy-enhanced embedding.
+
+Coaches cannot download, rehost, clip, or automatically expose these videos to families.
+
+### Media moderation
+
+Where authorized, a coach should be able to:
+
+- Hide questionable team media.
+- Restore permitted media.
+- Report or remove media through the reviewed workflow.
+- Set appropriate team or organization visibility.
+- Produce an audit record for sensitive moderation actions.
+
+## League administrator
+
+### Operational overview
+
+An administrator should be able to:
+
+- See the current organization, season, and administrator role.
+- Identify the most important launch blocker immediately.
+- See league-health and readiness indicators.
+- See missing coaches, family-access gaps, empty rosters, empty schedules, pending invites, import warnings, and provider issues.
+- Work from prioritized queues rather than an undifferentiated card dashboard.
+- Inspect recent audit activity.
+
+### Registrations
+
+An administrator should be able to:
+
+- Review pending parent registration requests.
+- See the requested organization, season, team, and parent identity.
+- Approve or reject a registration.
+- Prevent registration into archived teams or seasons.
+- Record the administrator responsible for the decision.
+- See which membership and access records will be created.
+- Preserve an audit trail.
+
+### Family access and guardian links
+
+An administrator should be able to:
+
+- Review missing or disputed guardian-child links.
+- Verify that the parent profile exists.
+- Inspect bounded supporting evidence.
+- Approve or reject a repair.
+- Create or repair guardian links and related membership records.
+- Audit every access change.
+- Avoid granting access based only on a social-login identity.
+
+### Teams, seasons, and rosters
+
+An administrator should be able to:
+
+- Create and manage organizations, seasons, divisions, teams, and players.
+- Assign coaches.
+- Manage team memberships.
+- View roster size, coach coverage, and family-access readiness.
+- Manage roster lifecycle and archived-season state.
+- Preview automatic team construction.
+- Keep siblings or guardian groups together where requested.
+- Consider friend requests and skill balance.
+- See roster-size and balance warnings.
+- Review, edit, approve, and publish team assignments.
+- Use roster-maker and bracket-planning previews.
+- Use season-planning metrics.
+- Work with lineup-planning tools where available.
+- Audit published assignment changes.
+
+### Imports and duplicate detection
+
+An administrator should be able to:
+
+- Upload and preview a roster CSV.
+- Validate required fields.
+- Normalize names, emails, and telephone numbers.
+- Detect duplicate players, parent emails, parent phones, and jersey numbers.
+- Separate blocking errors from warnings.
+- Review row-level issue codes.
+- Skip or correct problematic rows.
+- Record an audited import decision.
+- Avoid automatically sending invites as an uncontrolled side effect.
+
+### Invitations
+
+An administrator should be able to:
+
+- See invite status and expiration.
+- Identify pending, failed, expired, accepted, and revoked invitations.
+- Regenerate an eligible invitation.
+- Respect resend and abuse-prevention limits.
+- Store and display only safe token evidence.
+- Audit invite recovery activity.
+
+### Schedule and venues
+
+An administrator should be able to:
+
+- Review the league calendar.
+- Select an event and inspect its team, time, location, status, affected families, and conflicts.
+- Compare original details with proposed changes.
+- Use a Change Lens for time, location, and status changes.
+- Preview the effect on RSVPs and family notification records.
+- Queue a reviewed schedule change.
+- Distinguish review records from delivered alerts.
+- Treat archived-season schedules as read-only.
+
+Full recurring-event and durable venue management remain production-expansion areas.
+
+### Communications and delivery review
+
+An administrator should be able to:
+
+- Prepare league or team communication drafts.
+- Preview email and SMS versions.
+- See message length or SMS segment estimates.
+- Queue pending notification records.
+- Review recipient preferences and channel eligibility.
+- Review whether a provider is connected.
+- Approve, reject, suppress, or prepare a retry plan.
+- Inspect delivery-attempt records.
+- See Draft, Approved, Published, Queued, Sent, Failed, Suppressed, and Disconnected as distinct states.
+- Avoid claiming a message was sent without provider evidence.
+
+### Safety and weather
+
+An administrator should be able to:
+
+- Review heat, lightning, air-quality, field-closure, and cancellation evidence.
+- Review weather-alert drafts.
+- Inspect the weather source and fallback source.
+- Approve or reject proposed safety communication.
+- Maintain audit evidence for the decision.
+- Keep safety recommendations separate from an externally delivered alert.
+
+### Media and drill-video review
+
+An administrator should be able to:
+
+- Review reported or hidden team media.
+- Approve, restore, hide, or remove media.
+- Control team or organization visibility.
+- Review submitted drill videos.
+- Review source-channel allowlist status.
+- Inspect Made-for-Kids and embeddability metadata.
+- Approve or reject video references.
+- Keep coach-only media from becoming parent-facing without another review.
+
+### Sponsors and league finances
+
+An administrator should be able to:
+
+- Create, edit, activate, expire, or remove sponsor records.
+- Manage approved sponsor placements.
+- Queue and review sponsor logo metadata.
+- Keep sponsor billing separate from child-facing sponsor display.
+- View receivables, unpaid family balances, scholarship support, and renewal risk.
+- See sponsor-match suggestions.
+- Record Stripe Product, Price, invoice, and payment-proof references.
+- View approved local-business team placements.
+
+Live payment collection and settlement require a configured Stripe workflow and webhook-confirmed proof.
+
+### Branding
+
+An administrator should be able to:
+
+- Set organization-wide theme defaults.
+- Set team colors, mascot, sport theme, and visual identity.
+- Preview branding across navigation, mobile headers, team portals, messages, sponsor documents, and game-day surfaces.
+- Test contrast and fallback-avatar behavior.
+- Preview a local mascot asset.
+- Queue approved HTTPS logo metadata.
+- See which brand surfaces pass launch QA.
+- Keep LeaguePilot as the public product brand while treating organization names as tenant branding.
+
+Durable binary uploads and externally rendered email/push branding remain provider-dependent.
+
+### Reports and archive
+
+An administrator should be able to:
+
+- Export audited CSV reports for rosters, contacts, schedules, RSVPs, snacks, volunteers, sponsors, and notifications.
+- Scope exports to the active organization.
+- Review archive readiness.
+- Close or preserve a season through a reviewed workflow.
+- Preserve required non-chat season records.
+- See archived records as read-only.
+- Review chat-retention and deletion evidence separately.
+
+### Security, health, and audit
+
+An administrator should be able to:
+
+- Review tenant setup readiness.
+- Inspect active-season, team, coach, roster, family-access, and schedule coverage.
+- Review role and membership boundaries.
+- Inspect access-control and tenant-isolation proof.
+- Review provider readiness.
+- Review recent administrative and sensitive-action audit events.
+- See whether a security check passed, failed, or remains unverified.
+- Access diagnostics without exposing infrastructure terminology to parents and coaches.
+
+## Shared capabilities for authenticated adults
+
+All authorized adult users should be able to:
+
+- See role-aware navigation.
+- Switch among their approved roles.
+- See the active organization, team, and season context.
+- Use responsive mobile, tablet, and desktop layouts.
+- Use system dark mode.
+- Use the production PWA and offline fallback.
+- See clear loading, empty, success, failure, and read-only states.
+- See a certainty band explaining the screen’s current operational truth.
+- Distinguish Draft, Approved, Published, Sent, Read-only, Disconnected, Pending access, and Audit recorded.
+- Access only data permitted by their organization, team, role, and membership.
+- Receive privacy-preserving names and data appropriate to the current role.
+
+## Actions nobody should be able to perform
+
+- A child cannot create or use a child account.
+- A parent cannot access an unlinked child.
+- A coach cannot access an unassigned team.
+- A social login cannot automatically grant team or administrator authority.
+- A user cannot bypass an approval checkpoint.
+- AI cannot publish, notify families, or create access rights autonomously.
+- A draft cannot be represented as a sent message.
+- A browser return cannot be represented as a settled payment.
+- Unapproved media cannot appear on parent-facing surfaces.
+- Sponsor pages cannot expose child profiles, private media, parent contacts, or billing details.
+- Equipment or availability features cannot publicly rank or shame families.
+- Archived-season records cannot be silently modified.
+- Provider credentials or implementation terminology should not appear in normal parent or coach interfaces.
+
+The canonical repo-grounded references are the [feature tracker](/home/administrator/projects/youth-sports-platform-mvp-v3/docs/Features.md:1), [capability matrix](/home/administrator/projects/youth-sports-platform-mvp-v3/docs/capability-matrix.md:1), and [role route map](/home/administrator/projects/youth-sports-platform-mvp-v3/lib/navigation/route-topology.ts:1).
