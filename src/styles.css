@@ -1,0 +1,187 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  min-width: 320px;
+  background-color: #070a14;
+  color: #e8ecf8;
+  font-family: "Plus Jakarta Sans", Inter, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Starfield + soft nebula glows used behind the whole app */
+.bg-stars {
+  background-color: #070a14;
+  background-image:
+    radial-gradient(circle at 15% 0%, rgba(77, 216, 255, 0.14), transparent 32%),
+    radial-gradient(circle at 85% 10%, rgba(255, 122, 26, 0.12), transparent 30%),
+    radial-gradient(circle at 60% 90%, rgba(255, 79, 163, 0.08), transparent 30%),
+    radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: auto, auto, auto, 30px 30px;
+  background-attachment: fixed;
+}
+
+/* 3D tilted "mission control" panel */
+.tilt-stage {
+  perspective: 1800px;
+}
+
+.tilt-panel {
+  transform-style: preserve-3d;
+  transform: rotateX(5deg) rotateY(-9deg);
+  transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@media (hover: hover) {
+  .tilt-stage:hover .tilt-panel {
+    transform: rotateX(0deg) rotateY(-2deg);
+  }
+}
+
+@media (max-width: 767px) {
+  .tilt-panel,
+  .tilt-stage:hover .tilt-panel {
+    transform: none;
+  }
+}
+
+.viewport-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Motion */
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-ticker {
+  animation: ticker 30s linear infinite;
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-14deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(-10deg);
+  }
+}
+
+.animate-floaty {
+  animation: floaty 3.6s ease-in-out infinite;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-rise {
+  animation: rise 0.7s ease-out both;
+}
+
+.delay-1 {
+  animation-delay: 0.1s;
+}
+.delay-2 {
+  animation-delay: 0.2s;
+}
+.delay-3 {
+  animation-delay: 0.3s;
+}
+.delay-4 {
+  animation-delay: 0.4s;
+}
+
+@keyframes orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-orbit {
+  animation: orbit 16s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes blip {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.8);
+  }
+}
+
+.animate-blip {
+  animation: blip 1.6s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+.group:hover .group-hover\:animate-wiggle {
+  animation: wiggle 0.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-ticker,
+  .animate-floaty,
+  .animate-orbit,
+  .animate-blip,
+  .animate-rise {
+    animation: none;
+  }
+}
+
+/* Utilities */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
